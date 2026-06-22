@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f0fdfa;
+  color: #134e4a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbars on the nav rails but keep scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white shadow-card border border-brand-100/60;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-brand-700 text-white hover:bg-brand-800 shadow-sm;
+  }
+  .btn-ghost {
+    @apply btn bg-brand-50 text-brand-800 hover:bg-brand-100;
+  }
+  .btn-outline {
+    @apply btn border border-brand-200 bg-white text-brand-800 hover:bg-brand-50;
+  }
+  .input {
+    @apply w-full rounded-xl border border-brand-200 bg-white px-3.5 py-2.5 text-sm text-brand-900 placeholder:text-brand-400 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 transition;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-brand-600;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+}
